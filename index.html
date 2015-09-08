@@ -54,6 +54,7 @@
                 </section>
                 <section>
                     <h1>Maintenance & new development</h1>
+		    <!-- Half of it consisted of adding features to existing services and the rest dealt with  -->
                 </section>
                 <section>
                     <h1>14 APIs in production</h1>
@@ -65,7 +66,7 @@
                     <h1>Javascript, Scala & Clojure</h1>
                 </section>
                 <section>
-                    <h1>7 learnings</h1>
+                    <h1>Key differences</h1>
                 </section>
 
                 <section>
@@ -98,20 +99,22 @@
                     </section>
                     <section>
                         <!-- TODO Real code examples -->
-                        <h1>Scala</h1>
-                        <h3 class="fragment">Json4s</h3>
-                        <h3 class="fragment">Play JSON</h3>
+			<h1>Scala</h1>
+			<pre class="fragment"><code data-trim>
+			val json = ("name" -> "joe") ~ ("age" -> 35) // json4s
+			</code></pre>
+			<pre class="fragment"><code data-trim>
+			val json = Json.obj("name" -> "joe", "age" -> 35) (// Play JSON
+			</code></pre>
                         <h3 class="fragment">Zeison</h3>
                     </section>
                     <section>
                         <h1>Clojure</h1>
-			<!-- TODO Real code examples -->
-                        <ol>
-                            <li>parse-string</li>
-                            <li>Clojure code</li>
-                            <li>generate-string</li>
-                            <li>Profit!</li>
-                        </ol>
+                        <pre class="fragment"><code data-trim>
+(let [data (parse-string json-string true)
+      transformed (map #(* 2 (:value %)) data)]
+  (generate-string transformed))
+			</code></pre>
                     </section>
                 </section>
                 <section>
@@ -127,19 +130,19 @@
                     <section>
                         <h1>Scala</h1>
                         <pre><code data-trim>
-                        List(1, 2, 3).map(_ + 42)
+                        List(1, 2, 3).map(_ * 2)
                         </code></pre>
                         <pre class="fragment"><code data-trim>
-                        List(1, 2, 3).par.map(_ + 42)
+                        List(1, 2, 3).par.map(_ * 2)
                         </code></pre>
                     </section>
                     <section>
                         <h1>Clojure</h1>
                         <pre><code data-trim>
-                        (map #(+ 42 %) [1 2 3])
+                        (map #(* 2 %) [1 2 3])
                         </code></pre>
                         <pre class="fragment"><code data-trim>
-                        (pmap #(+ 42 %) [1 2 3])
+                        (pmap #(* 2 %) [1 2 3])
                         </code></pre>
                     </section>
                 </section>
