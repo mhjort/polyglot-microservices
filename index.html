@@ -101,19 +101,31 @@
                         <!-- TODO Real code examples -->
 			<h1>Scala</h1>
 			<pre class="fragment"><code data-trim>
-			val json = ("name" -> "joe") ~ ("age" -> 35) // json4s
+val json =
+  ("name" -> "Joe") ~
+  ("age" -> 35) ~
+  ("children" -> Seq("Tina", "Jack")) // json4s
 			</code></pre>
 			<pre class="fragment"><code data-trim>
-			val json = Json.obj("name" -> "joe", "age" -> 35) (// Play JSON
+val json = Json.obj(
+  "name" -> "Joe",
+  "age" -> 35,
+  "children" -> Json.arr("Tina", "Jack"))) // Play JSON
 			</code></pre>
-                        <h3 class="fragment">Zeison</h3>
+			<pre class="fragment"><code data-trim>
+val json = Zeison.toJson(Map(
+  "name" -> "Joe",
+  "age" -> 35,
+  "children" -> Seq("Tina", "Jack"))) // Zeison
+			</code></pre>
                     </section>
                     <section>
                         <h1>Clojure</h1>
                         <pre class="fragment"><code data-trim>
-(let [data (parse-string json-string true)
-      transformed (map #(* 2 (:value %)) data)]
-  (generate-string transformed))
+(generate-string
+  {:name "Joe"
+   :age 35
+   :children ["Tina" "Jack"])
 			</code></pre>
                     </section>
                 </section>
