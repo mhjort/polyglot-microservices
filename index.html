@@ -201,26 +201,20 @@ val json = Zeison.toJson(Map(
                 </section>
 
                 <section>
-                    <section>
-                        <h1>Development speed</h1>
-                    </section>
-                    <section>
-			<!-- TODO Real figures -->
-                        <h1>Javascript</h1>
-                        <h3 class="fragment">mocha.js => 5 secs</h3>
-                    </section>
-                    <section>
-                        <h1>Scala</h1>
-                        <h3 class="fragment">sbt clean test => 5 mins</h3>
-                    </section>
-                    <section>
-                        <h1>Clojure</h1>
-                        <h3 class="fragment">lein do clean, test => 2 mins</h3>
-                    </section>
+					<h1>Development speed</h1>
+					<pre class="fragment"><code data-trim>
+						mocha test // ~ seconds
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+						sbt clean test // ~ 2 minutes
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+						lein do clean, test ; ~ 1 minute
+					</code></pre>
                 </section>
                 <section>
                     <h1>Clojure</h1>
-		    <img src="img/Trophy.png"/>
+		    		<img src="img/Trophy.png"/>
                 </section>
 
             </div>
